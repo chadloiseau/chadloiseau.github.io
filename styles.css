@@ -98,10 +98,21 @@ nav {
     font-weight: 700;
     color: var(--text-dark);
     font-family: var(--font-heading);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .logo a:hover {
     color: var(--primary-color);
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
 }
 
 .nav-links {
@@ -128,7 +139,6 @@ nav {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: var(--spacing-xl) var(--spacing-md);
-    text-align: center;
     min-height: 600px;
     display: flex;
     align-items: center;
@@ -136,7 +146,29 @@ nav {
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 1100px;
+    width: 100%;
+}
+
+.hero-layout {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.hero-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: left;
 }
 
 #hero h1 {
@@ -415,6 +447,20 @@ footer p {
     
     #hero h1 { font-size: 2.5rem; }
     #hero h2 { font-size: 1.5rem; }
+    
+    .hero-layout {
+        flex-direction: column;
+
+    }
+    
+    .hero-text {
+        text-align: center;
+    }
+    
+    .hero-image {
+        width: 200px;
+        height: 200px;
+    }
     
     .nav-links {
         gap: var(--spacing-sm);
