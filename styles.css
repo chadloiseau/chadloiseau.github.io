@@ -136,7 +136,7 @@ nav {
 
 /* Hero Section */
 #hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1f2937 0%, #4338ca 100%);
     color: white;
     padding: var(--spacing-xl) var(--spacing-md);
     min-height: 600px;
@@ -593,7 +593,7 @@ html {
 
 /* Metrics / Impact Banner */
 #impact {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1f2937 0%, #4338ca 100%);
     padding: var(--spacing-lg) 0;
 }
 
