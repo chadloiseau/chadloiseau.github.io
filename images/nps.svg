@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240" width="300" height="240">
+  <rect width="300" height="240" fill="#f1f5f9"/>
+
+  <!-- Title -->
+  <rect x="20" y="18" width="260" height="22" rx="4" fill="#667eea"/>
+  <text x="150" y="33" font-family="Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">CUSTOMER FEEDBACK DASHBOARD</text>
+
+  <!-- NPS Score circle -->
+  <circle cx="72" cy="100" r="42" fill="white" stroke="#e2e8f0" stroke-width="2"/>
+  <circle cx="72" cy="100" r="42" fill="none" stroke="#667eea" stroke-width="6" stroke-dasharray="190 265" stroke-linecap="round" transform="rotate(-90 72 100)"/>
+  <text x="72" y="95" font-family="Arial, sans-serif" font-size="22" fill="#1e293b" text-anchor="middle" font-weight="bold">72</text>
+  <text x="72" y="110" font-family="Arial, sans-serif" font-size="8" fill="#64748b" text-anchor="middle">NPS Score</text>
+  <text x="72" y="123" font-family="Arial, sans-serif" font-size="7" fill="#10b981" text-anchor="middle">▲ Trending Up</text>
+
+  <!-- Breakdown bars -->
+  <text x="135" y="68" font-family="Arial, sans-serif" font-size="8" fill="#475569" font-weight="bold">Feedback Breakdown</text>
+
+  <text x="135" y="86" font-family="Arial, sans-serif" font-size="7.5" fill="#10b981">Promoters</text>
+  <rect x="185" y="76" width="80" height="10" rx="5" fill="#e2e8f0"/>
+  <rect x="185" y="76" width="62" height="10" rx="5" fill="#10b981"/>
+  <text x="272" y="85" font-family="Arial, sans-serif" font-size="7" fill="#64748b">78%</text>
+
+  <text x="135" y="106" font-family="Arial, sans-serif" font-size="7.5" fill="#f59e0b">Passives</text>
+  <rect x="185" y="96" width="80" height="10" rx="5" fill="#e2e8f0"/>
+  <rect x="185" y="96" width="16" height="10" rx="5" fill="#f59e0b"/>
+  <text x="272" y="105" font-family="Arial, sans-serif" font-size="7" fill="#64748b">20%</text>
+
+  <text x="135" y="126" font-family="Arial, sans-serif" font-size="7.5" fill="#ef4444">Detractors</text>
+  <rect x="185" y="116" width="80" height="10" rx="5" fill="#e2e8f0"/>
+  <rect x="185" y="116" width="6" height="10" rx="5" fill="#ef4444"/>
+  <text x="272" y="125" font-family="Arial, sans-serif" font-size="7" fill="#64748b">2%</text>
+
+  <!-- Trend line chart -->
+  <rect x="20" y="158" width="260" height="62" rx="6" fill="white" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="30" y="172" font-family="Arial, sans-serif" font-size="7.5" fill="#475569" font-weight="bold">Score Over Time</text>
+  <polyline points="35,205 80,198 125,192 170,183 215,176 265,168" fill="none" stroke="#667eea" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <polyline points="35,205 80,198 125,192 170,183 215,176 265,168" fill="url(#grad)" stroke="none" opacity="0.15"/>
+  <circle cx="35" cy="205" r="3" fill="#667eea"/>
+  <circle cx="80" cy="198" r="3" fill="#667eea"/>
+  <circle cx="125" cy="192" r="3" fill="#667eea"/>
+  <circle cx="170" cy="183" r="3" fill="#667eea"/>
+  <circle cx="215" cy="176" r="3" fill="#667eea"/>
+  <circle cx="265" cy="168" r="3.5" fill="#764ba2"/>
+  <text x="35" y="218" font-family="Arial, sans-serif" font-size="6.5" fill="#94a3b8" text-anchor="middle">2020</text>
+  <text x="125" y="218" font-family="Arial, sans-serif" font-size="6.5" fill="#94a3b8" text-anchor="middle">2022</text>
+  <text x="215" y="218" font-family="Arial, sans-serif" font-size="6.5" fill="#94a3b8" text-anchor="middle">2024</text>
+  <text x="265" y="218" font-family="Arial, sans-serif" font-size="6.5" fill="#94a3b8" text-anchor="middle">Now</text>
+</svg>

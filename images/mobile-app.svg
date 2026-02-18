@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 240" width="300" height="240">
+  <!-- Background -->
+  <rect width="300" height="240" fill="#f1f5f9"/>
+  
+  <!-- Phone body -->
+  <rect x="95" y="15" width="110" height="200" rx="16" ry="16" fill="#1e293b"/>
+  
+  <!-- Screen -->
+  <rect x="102" y="30" width="96" height="170" rx="6" ry="6" fill="#ffffff"/>
+  
+  <!-- Notch -->
+  <rect x="130" y="28" width="40" height="10" rx="5" ry="5" fill="#1e293b"/>
+  
+  <!-- App header bar -->
+  <rect x="102" y="30" width="96" height="28" rx="6" ry="6" fill="#667eea"/>
+  <rect x="102" y="44" width="96" height="14" fill="#667eea"/>
+  <text x="150" y="49" font-family="Arial, sans-serif" font-size="9" fill="white" text-anchor="middle" font-weight="bold">My App</text>
+  
+  <!-- Content cards -->
+  <rect x="110" y="66" width="80" height="22" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="115" y="71" width="30" height="5" rx="2" fill="#667eea"/>
+  <rect x="115" y="79" width="50" height="4" rx="2" fill="#cbd5e1"/>
+
+  <rect x="110" y="94" width="80" height="22" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="115" y="99" width="40" height="5" rx="2" fill="#667eea"/>
+  <rect x="115" y="107" width="35" height="4" rx="2" fill="#cbd5e1"/>
+
+  <rect x="110" y="122" width="80" height="22" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="115" y="127" width="25" height="5" rx="2" fill="#667eea"/>
+  <rect x="115" y="135" width="45" height="4" rx="2" fill="#cbd5e1"/>
+
+  <!-- Chart bars -->
+  <rect x="110" y="152" width="80" height="36" rx="4" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="116" y="172" width="10" height="10" rx="1" fill="#667eea"/>
+  <rect x="129" y="165" width="10" height="17" rx="1" fill="#764ba2"/>
+  <rect x="142" y="169" width="10" height="13" rx="1" fill="#667eea"/>
+  <rect x="155" y="160" width="10" height="22" rx="1" fill="#764ba2"/>
+  <rect x="168" y="163" width="10" height="19" rx="1" fill="#667eea"/>
+
+  <!-- Bottom nav -->
+  <rect x="102" y="188" width="96" height="12" fill="#f8fafc" stroke="#e2e8f0" stroke-width="0.5"/>
+  <circle cx="126" cy="194" r="3" fill="#667eea"/>
+  <circle cx="150" cy="194" r="3" fill="#cbd5e1"/>
+  <circle cx="174" cy="194" r="3" fill="#cbd5e1"/>
+</svg>

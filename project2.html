@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case Study: Roadmap Tool Integration - How Chad Loiseau built a roadmapping process from scratch and drove org-wide alignment with Airfocus and Roadmunk">
+    <title>Roadmap Tool Integration | Chad Loiseau</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .case-study-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: var(--spacing-xl) var(--spacing-md);
+            text-align: center;
+        }
+        .case-study-hero h1 { color: white; font-size: 3rem; margin-bottom: var(--spacing-sm); }
+        .case-study-hero p { color: rgba(255,255,255,0.85); font-size: 1.25rem; max-width: 700px; margin: 0 auto var(--spacing-md); }
+        .breadcrumb { font-size: 0.9rem; color: rgba(255,255,255,0.7); margin-bottom: var(--spacing-md); }
+        .breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: underline; }
+        .breadcrumb a:hover { color: white; }
+        .case-study-meta { display: flex; justify-content: center; gap: var(--spacing-lg); flex-wrap: wrap; margin-top: var(--spacing-md); }
+        .meta-item { text-align: center; }
+        .meta-label { display: block; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.65); margin-bottom: 0.25rem; }
+        .meta-value { display: block; font-size: 1rem; font-weight: 600; color: white; }
+        .case-study-body { max-width: 820px; margin: 0 auto; padding: var(--spacing-xl) var(--spacing-md); }
+        .case-study-body h2 { font-size: 1.75rem; margin-top: var(--spacing-lg); margin-bottom: var(--spacing-sm); text-align: left; }
+        .case-study-body h2::after { margin: 0.4rem 0 0; }
+        .case-study-body p { font-size: 1.1rem; line-height: 1.8; color: var(--text-light); }
+        .case-study-body ul { list-style: none; padding: 0; margin-bottom: var(--spacing-md); }
+        .case-study-body ul li { padding: 0.5rem 0 0.5rem 1.75rem; position: relative; color: var(--text-light); font-size: 1.1rem; line-height: 1.7; }
+        .case-study-body ul li::before { content: "▸"; position: absolute; left: 0; color: var(--primary-color); font-weight: bold; }
+        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: var(--spacing-md); margin: var(--spacing-md) 0 var(--spacing-lg); }
+        .result-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: var(--border-radius); padding: var(--spacing-md); text-align: center; color: white; }
+        .result-number { display: block; font-size: 2.5rem; font-weight: 700; font-family: var(--font-heading); line-height: 1; margin-bottom: 0.5rem; }
+        .result-label { display: block; font-size: 0.9rem; color: rgba(255,255,255,0.85); }
+        .callout { background-color: var(--background-light); border-left: 4px solid var(--primary-color); padding: var(--spacing-md); border-radius: 0 var(--border-radius) var(--border-radius) 0; margin: var(--spacing-md) 0; }
+        .callout p { font-size: 1.15rem; font-style: italic; color: var(--text-dark); margin: 0; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--primary-color); font-weight: 600; margin-bottom: var(--spacing-lg); font-size: 1rem; }
+        .back-link:hover { gap: 0.75rem; }
+        .tag { background-color: var(--background-light); color: var(--text-light); padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.875rem; border: 1px solid var(--border-color); display: inline-block; margin: 0.25rem 0.25rem 0.25rem 0; }
+        .process-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--spacing-md); margin: var(--spacing-md) 0; }
+        .process-step { background: var(--background); border-radius: var(--border-radius); padding: var(--spacing-md); box-shadow: var(--box-shadow); text-align: center; }
+        .step-number { display: inline-block; width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); color: white; font-weight: 700; line-height: 36px; margin-bottom: var(--spacing-sm); font-size: 1rem; }
+        .process-step h4 { font-size: 1rem; color: var(--text-dark); margin-bottom: 0.5rem; font-family: var(--font-primary); }
+        .process-step p { font-size: 0.9rem; color: var(--text-light); margin: 0; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Chad Loiseau</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <a href="resume.pdf" download class="btn-resume">Download Resume</a>
+        </nav>
+    </header>
+
+    <section class="case-study-hero">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &rsaquo; <a href="index.html#projects">Projects</a> &rsaquo; Roadmap Tool Integration
+        </div>
+        <h1>Roadmap Tool Integration</h1>
+        <p>Building a roadmapping practice from zero — and getting an entire organization aligned around a single source of truth.</p>
+        <div class="case-study-meta">
+            <div class="meta-item">
+                <span class="meta-label">Tools</span>
+                <span class="meta-value">Airfocus &amp; Roadmunk</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Role</span>
+                <span class="meta-value">Evaluation &amp; Selection Lead</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Scale</span>
+                <span class="meta-value">Org-Wide (6+ Teams)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Focus</span>
+                <span class="meta-value">Strategy &amp; Tooling</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="case-study-body">
+
+        <a href="index.html#projects" class="back-link">← Back to Projects</a>
+
+        <div class="results-grid">
+            <div class="result-card">
+                <span class="result-number">0→1</span>
+                <span class="result-label">Built Roadmapping Practice from Scratch</span>
+            </div>
+            <div class="result-card">
+                <span class="result-number">6+</span>
+                <span class="result-label">Teams Aligned on One Tool</span>
+            </div>
+            <div class="result-card">
+                <span class="result-number">2</span>
+                <span class="result-label">Tools Selected &amp; Implemented</span>
+            </div>
+        </div>
+
+        <h2>The Problem</h2>
+        <p>There was no formal roadmapping process. Teams were working from scattered spreadsheets, slide decks, and ad-hoc documents — each with their own format, their own prioritization logic, and no easy way to align with stakeholders or leadership on what was being built and why.</p>
+        <p>The result: misalignment, duplicated effort, and roadmap reviews that were more about reconciling documents than making decisions. We needed a single source of truth, built on a process people would actually use.</p>
+
+        <div class="callout">
+            <p>"We weren't just buying a tool. We were building a muscle the organization didn't have yet — and the tool needed to support that, not complicate it."</p>
+        </div>
+
+        <h2>My Role</h2>
+        <p>I led the full evaluation and selection process — from defining requirements, scanning the market, running vendor trials, and building a scoring framework, all the way through to the final recommendation. I worked cross-functionally to gather input from PMs, engineering leads, and executive stakeholders to make sure whatever we chose would actually stick.</p>
+
+        <h2>The Process</h2>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h4>Market Scan &amp; RFP</h4>
+                <p>Reviewed the roadmapping tool landscape and issued formal requirements to shortlisted vendors.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h4>Stakeholder Input</h4>
+                <p>Collected requirements from PMs, engineering, design, and leadership to ensure broad fit.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h4>Trials &amp; Pilots</h4>
+                <p>Ran hands-on pilots with shortlisted tools across real teams with real roadmaps.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h4>Scoring Matrix</h4>
+                <p>Built a criteria-based scoring model to evaluate tools objectively across key dimensions.</p>
+            </div>
+        </div>
+
+        <h2>The Challenges</h2>
+        <p>This wasn't just a procurement exercise — it was a change management project. The real obstacles were human:</p>
+        <ul>
+            <li><strong>Resistance to change:</strong> Teams had their own ways of working and weren't eager to adopt something new. We addressed this by involving them early in the evaluation rather than handing down a decision.</li>
+            <li><strong>Leadership buy-in:</strong> Making the case to invest in dedicated tooling when the status quo "worked" required a clear articulation of cost — the hidden cost of misalignment, duplicated work, and slow reviews.</li>
+            <li><strong>Training and adoption:</strong> Selecting a tool is the easy part. Getting 6+ teams to use it consistently required deliberate onboarding, templates, and ongoing support.</li>
+            <li><strong>Budget and procurement:</strong> Navigating vendor negotiations and internal budget approval added complexity to the timeline.</li>
+        </ul>
+
+        <h2>The Outcome</h2>
+        <p>We selected and implemented two complementary tools — <strong>Airfocus</strong> for prioritization and strategic roadmapping, and <strong>Roadmunk</strong> for stakeholder-facing timeline views. The combination gave us the right tool for the right audience.</p>
+        <ul>
+            <li>Replaced a patchwork of spreadsheets and slide decks with a single source of truth used across 6+ teams</li>
+            <li>Stakeholder roadmap reviews became faster and more decision-focused</li>
+            <li>Executive leadership gained clear, consistent visibility into product direction</li>
+            <li>PMs spent less time maintaining roadmaps and more time on strategy</li>
+        </ul>
+
+        <h2>What I Learned</h2>
+        <p>Tool selection is 20% picking the right software and 80% change management. The teams that adopted it fastest were the ones we involved earliest. The lesson I carry forward: when you're building a new practice, inclusion in the process is the adoption strategy.</p>
+
+        <div style="margin-top: var(--spacing-lg);">
+            <span class="tag">Product Strategy</span>
+            <span class="tag">Tools</span>
+            <span class="tag">Efficiency</span>
+            <span class="tag">Stakeholder Management</span>
+            <span class="tag">Change Management</span>
+            <span class="tag">Org-Wide Impact</span>
+        </div>
+
+        <div style="margin-top: var(--spacing-lg); padding-top: var(--spacing-md); border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+            <a href="project1.html" class="back-link">← Previous Case Study</a>
+            <a href="project3.html" class="back-link">Next Case Study →</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Chad Loiseau. Built with HTML, CSS, and determination.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
