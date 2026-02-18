@@ -38,6 +38,7 @@ body {
     line-height: 1.6;
     color: var(--text-dark);
     background-color: var(--background);
+    overflow-x: hidden;
 }
 
 /* Container */
@@ -82,6 +83,7 @@ header {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
 }
 
 nav {
@@ -512,6 +514,59 @@ footer p {
 }
 
 /* Responsive Design */
+
+/* Resume Download Button (Nav) */
+.btn-resume {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn-resume:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-dark);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.nav-open .hamburger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-open .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-open .hamburger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 @media (max-width: 768px) {
     h1 { font-size: 2.5rem; }
     h2 { font-size: 2rem; }
@@ -533,12 +588,35 @@ footer p {
         height: 200px;
     }
     
-    .nav-links {
-        gap: var(--spacing-sm);
+    .hamburger {
+        display: flex;
     }
-    
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--background);
+        flex-direction: column;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        gap: 0.25rem;
+    }
+
+    .nav-open .nav-links {
+        display: flex;
+    }
+
     .nav-links a {
-        padding: 0.5rem;
+        padding: 0.75rem 1rem;
+        width: 100%;
+    }
+
+    .btn-resume {
+        display: none;
     }
     
     section {
@@ -562,34 +640,13 @@ footer p {
         align-items: center;
     }
 
-    .btn-resume {
-        display: none;
-    }
 }
 
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
 }
-/* Resume Download Button (Nav) */
-.btn-resume {
-    display: inline-block;
-    padding: 0.5rem 1.25rem;
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: var(--border-radius);
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: var(--transition);
-    white-space: nowrap;
-}
 
-.btn-resume:hover {
-    background-color: var(--secondary-color);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-}
 
 /* Metrics / Impact Banner */
 #impact {
@@ -629,6 +686,59 @@ html {
     color: rgba(255, 255, 255, 0.85);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+}
+
+
+/* Resume Download Button (Nav) */
+.btn-resume {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn-resume:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-dark);
+    border-radius: 2px;
+    transition: var(--transition);
+}
+
+.nav-open .hamburger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-open .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-open .hamburger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 @media (max-width: 768px) {
