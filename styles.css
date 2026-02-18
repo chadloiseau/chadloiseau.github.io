@@ -594,9 +594,121 @@ footer p {
         flex-direction: column;
         align-items: center;
     }
+
+    .btn-resume {
+        display: none;
+    }
 }
 
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
+}
+/* Resume Download Button (Nav) */
+.btn-resume {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.btn-resume:hover {
+    background-color: var(--secondary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Metrics / Impact Banner */
+#impact {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: var(--spacing-lg) 0;
+}
+
+#impact::after {
+    display: none;
+}
+
+.metrics-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-lg);
+}
+
+.metric-item {
+    text-align: center;
+    color: white;
+}
+
+.metric-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.metric-label {
+    display: block;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+    .metrics-grid {
+        gap: var(--spacing-md);
+    }
+
+    .metric-number {
+        font-size: 2.25rem;
+    }
+}
+
+/* Leadership Philosophy Section */
+.leadership-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.leadership-card {
+    background-color: var(--background);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary-color);
+}
+
+.leadership-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.leadership-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.leadership-card h3 {
+    color: var(--text-dark);
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.leadership-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin: 0;
 }
